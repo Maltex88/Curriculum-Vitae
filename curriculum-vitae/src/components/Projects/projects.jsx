@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import boostApp from '../assets/boost.png'; 
-import { ProjectsArray } from './projectArray.js'
-import Project from './project.js'
+import { ProjectsArray } from './projectArray.jsx'
+import Project from './project.jsx'
 
 const ProjectsMainContainer = styled.div`
     display: flex;

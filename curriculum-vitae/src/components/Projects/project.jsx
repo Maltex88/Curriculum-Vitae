@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 const ProjectMain = styled.div` 
     display: flex;
+    background-color: white;
     border-radius: 15px;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #1d3557;
-    
     @media (max-width: 900px) {
         flex-direction: column;
     }
@@ -15,29 +16,22 @@ const ProjectMain = styled.div`
     }
 `; 
 const InnerChildAbout = styled.div`
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 15px;
     margin-right: 5px;
-
-    width: 40%;
-    height: auto;
     @media (max-width: 900px) {
         width: auto;
         margin-bottom: 9px;
       };
     @media (max-width: 425px) {
-        width: 100%;
+
     }
 
 `;
 const InnerChildInfo = styled.div`
     padding: 15px;
-    width: auto;
-    height: auto;
     margin-left: 5px;
     white-space: pre-wrap;
-    
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     @media (max-width: 900px) {
         width: auto;
       };
@@ -48,19 +42,52 @@ const InnerChildInfo = styled.div`
 const ChildTitle = styled.h3`
     
 `;
-const ImgViewer = styled.div`
+const ButtonBox = styled.div`
     display: flex;
-    justifyContent: space-around; 
+    margin-top: 5%;
+    justify-content: space-around;
+
+    @media (max-width: 425px) {
+        margin-top: 15%;
+      }
 `;
 
 //Button Styles
-const GithubButton = styled.button``;
-const PreviewButton = styled.button``;
+const GithubButton = styled.button`
+    background-color: black;
+    text-align: center;
+    color: white;
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+`;
+const PreviewButton = styled.button`
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+`;
 
 //List Styles
-const ListParent = styled.div`
-    display: flex
+const SkillsUsedList = styled.ul`
+    list-style-type: none;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
 `;
+const FeatureList = styled.ul`
+    list-style-type: none;
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+`;
+
+
+
+
 /*
 Title: 'Project BoostApp - Internship',
 About: 'The goal of the project was to develop an iOS and Andorid app to let Sigma employees compete in physical activities. The team followed a textbook example of scrum with dailys, retro, sprintplanning and weekly demos of the app to show our PO.',
@@ -77,19 +104,17 @@ const Project = (props) => (
                 <h5>About</h5>
                     <p>{props.projectInfo.About}</p>  
                 <h5>Skills Used</h5>
-                <ListParent>
-                    <ul>
+                <SkillsUsedList>
                         {props.projectInfo.SkillsUsed.map(x => <li key={x}>{x}</li>)}
-                    </ul>
-                    <ul>  
-                        {props.projectInfo.MoreSkillsUsed.map(x => <li key={x}>{x}</li>)}
-                    </ul>
-                </ListParent>
-            <ImgViewer>
-                <p>img1</p>
-                <p>img2</p>
-                <p>img3</p>
-            </ImgViewer>
+                </SkillsUsedList>
+                <ButtonBox>
+                    <GithubButton>
+                        Github
+                    </GithubButton>
+                    <PreviewButton>
+                        Preview    
+                    </PreviewButton>
+                </ButtonBox>    
         </InnerChildAbout>
         <InnerChildInfo>
             <h4>My Role</h4>
@@ -99,13 +124,11 @@ const Project = (props) => (
             <h4>Solutions</h4>    
                 <p>{props.projectInfo.Solutions}</p>
             <h4>Notable Features</h4> 
-                <ListParent>
-                    <ul>
-{props.projectInfo.Features.map(x => <li>{x}</li>)}
-                    </ul>
-                </ListParent>
+                <FeatureList>
+                  {props.projectInfo.Features.map(x => <li key={x}>{x}</li>)}            
+                </FeatureList>
         </InnerChildInfo>
-        </ProjectMain>
+    </ProjectMain>
 );
 
 export default Project;
