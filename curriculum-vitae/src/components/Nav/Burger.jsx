@@ -5,11 +5,8 @@ import RightNav from './RightNav.jsx';
 const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
-  position: fixed;
-  top: 10px;
-  right: 20px;
-
-  z-index: 20;
+  align-self: center;
+  z-index: 3;
 
   @media (max-width: 768px) {
     display: flex;
@@ -19,9 +16,10 @@ const StyledBurger = styled.div`
   display: none;
 
   div {
+    border: 1px solid black;
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => (open ? 'black' : 'red')};
+    background-color: ${({ open }) => (open ? 'white' : 'white')};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;

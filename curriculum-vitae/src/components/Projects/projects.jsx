@@ -1,23 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import boostApp from '../assets/boost.png'; 
-import { ProjectsArray } from './projectArray.jsx'
-import Project from './project.jsx'
+import boostApp from '../assets/boost.png';
+import { ProjectsArray } from './projectArray.jsx';
+import Project from './project.jsx';
 
 const ProjectsMainContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
-
-
 const Projects = () => (
-        <ProjectsMainContainer>
-           {ProjectsArray.map(x => <Project key={x.Id} projectInfo={x} />)}
-        </ProjectsMainContainer>
-    )
+  <ProjectsMainContainer>
+    {ProjectsArray.map(x => (
+      <Project key={x.Id} projectInfo={x} />
+    ))}
+  </ProjectsMainContainer>
+);
 
-export default Projects
+export default Projects;
 
 /*
 const Projects = () => (
