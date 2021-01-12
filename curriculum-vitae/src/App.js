@@ -1,85 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Navbar from './components/Nav/Navbar';
-
+import { Icon } from './components/assets/Icon';
 import Home from './components/home/home.jsx';
 import Projects from './components/Projects/projects.jsx';
-import Resumé from './components/resumé.js';
-import Error from './components/error';
-
+import About from './components/About/about.jsx';
+//import Error from './components/error';
+//fix error page
 import styled from 'styled-components';
 
+//Move icon to seperate file and export / import it.
 import { FaReact, FaCss3Alt, FaHtml5, FaJs } from 'react-icons/fa';
-
-import { IconContext } from 'react-icons';
-import { BiMenu } from 'react-icons/bi';
-
 let array = [FaReact, FaCss3Alt, FaHtml5, FaJs];
-
-const Icon = props => (
-  <IconContext.Provider value={{ color: 'white', size: `${props.iconSize}` }}>
-    <props.iconName />
-  </IconContext.Provider>
-);
-
-//Loop out my routes..
-
-// function Navbar() {
-//   const [state, toggleMenu] = useState(false);
-
-//   return (
-//     <NavbarMain>
-//       <Title>@ Henrik Nilsson</Title>
-//       <NavbarList showHide={state}>
-//         <NavLink exact to="/"
-//           style={{ textDecoration: 'none', color: '#f1faee'}}
-//           activeStyle={{ color: "lightBlue" }}>
-//           <NavBarChild>Home</NavBarChild>
-//         </NavLink>
-//         <NavLink exact to="/projects"
-//           style={{ textDecoration: 'none', color: '#f1faee'}}
-//           activeStyle={{ color: "lightBlue" }}>
-//           <NavBarChild>Projects</NavBarChild>
-//         </NavLink>
-//         <NavLink exact to="/resumé"
-//           style={{ textDecoration: 'none', color: '#f1faee'}}
-//           activeStyle={{ color: "lightBlue" }}>
-//           <NavBarChild>About me</NavBarChild>
-//         </NavLink>
-//       </NavbarList>
-//       <HamburgerIcon showHide={state} onClick={() => toggleMenu(!state)}>
-//         <Icon iconName={BiMenu} iconSize={35} />
-//       </HamburgerIcon>
-//     </NavbarMain>
-//   );
-// };
 
 function App() {
   return (
-    <MainComponent>
+    <div>
       <Navbar />
-      <Test>
+      <Main>
         <Route path="/" component={Home} exact />
-        <Route path="/projects" component={Projects} />
-        <Route path="/resumé" component={Resumé} />
-      </Test>
+        <Route path="/Projects" component={Projects} />
+        <Route path="/About" component={About} />
+      </Main>
 
       <MainFoot>
         {array.map(x => (
-          <Icon iconName={x} iconSize={35} key={x} />
+          <Icon iconName={x} iconSize={35} key={x} color={'#0DF8DE'} />
         ))}
       </MainFoot>
-    </MainComponent>
+    </div>
   );
 }
 
 export default App;
 
-const MainComponent = styled.div``;
-
 const MainFoot = styled.div`
-  background-color: #1d3557;
+  background-color: #181818;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -88,7 +45,7 @@ const MainFoot = styled.div`
   height: 7.5vh;
 `;
 
-const Test = styled.main`
+const Main = styled.main`
   position: relative;
-  z-index: ;
+  background-color: #252628;
 `;

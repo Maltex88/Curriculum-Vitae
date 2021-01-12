@@ -9,7 +9,7 @@ const Nav = styled.nav`
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: relative;
   z-index: 2;
 
   .logo {
@@ -21,7 +21,7 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
-      <div className="logo">@ Henrik Nilsson</div>
+      <div className="logo"></div>
       <Burger />
     </Nav>
   );

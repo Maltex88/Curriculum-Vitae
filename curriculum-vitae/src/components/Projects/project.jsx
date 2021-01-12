@@ -1,89 +1,82 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ButtonDisplay } from './buttonDisplay';
+import { StackData } from './stackData';
 
-const ProjectMain = styled.div`
+const Main = styled.div`
   display: flex;
-  background-color: white;
-  border-radius: 15px;
-  margin: 5px;
-
-  color: #1d3557;
-  height: 400px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  @media (max-width: 900px) {
+  padding: 25px;
+  white-space: pre-wrap;
+  @media (max-width: 768px) {
     flex-direction: column;
-  }
-  @media (max-width: 425px) {
-  }
-`;
-const InnerChildAbout = styled.div`
-  @media (max-width: 900px) {
-  }
-  @media (max-width: 425px) {
+    padding: 10px;
   }
 `;
-const InnerChildInfo = styled.div`
-  @media (max-width: 900px) {
+const AboutContent = styled.div`
+  margin: 0 5% 0 0;
+  width: 50vh;
+  h2,
+  p {
+    text-align: center;
   }
-  @media (max-width: 425px) {
-  }
-`;
-const ChildTitle = styled.h3``;
-const ButtonBox = styled.div`
-  display: flex;
-  margin-top: 5%;
-  justify-content: space-around;
 
-  @media (max-width: 425px) {
-    margin-top: 15%;
+  @media (max-width: 768px) {
+    width: auto;
+    margin: 0;
   }
 `;
 
-//Button Styles
-const GithubButton = styled.button`
-  background-color: black;
-  text-align: center;
-  color: white;
-  height: 30px;
-  width: 150px;
-  border: none;
-  border-radius: 5px;
-`;
-const PreviewButton = styled.button`
-  background-color: black;
-  color: white;
-  height: 30px;
-  width: 150px;
-  border: none;
-  border-radius: 5px;
-`;
+const InfoContent = styled.div`
+margin: 0 15% 25px 0;
+width: 100vh;
 
-//List Styles
-const SkillsUsedList = styled.ul`
-  list-style-type: none;
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-`;
-const FeatureList = styled.ul`
-  list-style-type: none;
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
-`;
+  div {
+    display: flex;
+    flex-direction: row;
+    
+    ul {
+      margin: 0 7% 0 0;
+    }
+  }
 
-/*
-Title: 'Project BoostApp - Internship',
-About: 'The goal of the project was to develop an iOS and Andorid app to let Sigma employees compete in physical activities. The team followed a textbook example of scrum with dailys, retro, sprintplanning and weekly demos of the app to show our PO.',
-SkillsUsed: ['JavaScript', 'Expo', 'React Native', 'ApolloClient', 'Google dev Api'],
-MoreSkillsUsed: ['graphQL', 'Scrum', 'Adobe XD' ],
-Id:
-*/
+  @media (max-width: 768px) {
+    margin: 0;
+    width: auto;
+    padding 15px;
+    border-bottom: 4px solid #0df8de;
+    p {
+        margin: 0 0 15px 0;
+    }
+    div {
+      flex-direction: column;
+      ul {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+`;
 
 const Project = props => (
-  <ProjectMain>
-    <p>content</p>
-  </ProjectMain>
+  <Main>
+    <AboutContent>
+      <h2>{props.projectInfo.Title}</h2>
+      <p>{props.projectInfo.About}</p>
+      <ButtonDisplay
+        Git={props.projectInfo.Github}
+        CheckOut={props.projectInfo.CheckItOut}
+      />
+    </AboutContent>
+    <InfoContent>
+      <h2>Role & Experience</h2>
+      <p>{props.projectInfo.Role}</p>
+      <h2>Features & Stack</h2>
+      <StackData
+        Features={props.projectInfo.Features}
+        Frameworks={props.projectInfo.Frameworks}
+        Others={props.projectInfo.Others}
+      />
+    </InfoContent>
+  </Main>
 );
 
 export default Project;
