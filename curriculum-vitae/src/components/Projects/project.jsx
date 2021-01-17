@@ -42,7 +42,6 @@ width: 100vh;
   @media (max-width: 768px) {
     margin: 0;
     width: auto;
-    padding 15px;
     border-bottom: 4px solid #0df8de;
     p {
         margin: 0 0 15px 0;

@@ -14,7 +14,8 @@ const Main = styled.div`
 const Content = styled.div`
   position: absolute;
   top: 4rem;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
