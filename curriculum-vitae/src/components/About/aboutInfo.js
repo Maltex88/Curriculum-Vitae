@@ -3,52 +3,35 @@ export const AboutInfo = [
     Title: 'About me',
     Github: 'https://github.com/Maltex88',
     LinkedIn: 'https://www.linkedin.com/in/henrik-nilsson-0b8a0716a',
-    InfoString: `Hello, Im henrik, A Developer from sweden with a great passion for learning, technology and self improvment that have found my calling in development when i saw the opportunity to combine my drive to create with my hunger for learning.`,
-    Info: []
-  },
-  {
-    Title: 'Why hire me?',
-    Displaypicture: true,
-    Git: 'https://github.com/Maltex88/',
-    LinkedIn: '',
-    InfoString: `Im a driven teamplayer that jumps at the opportunity to challenge himself and his team. My goal is to become a valid part of an organization that believes that challenges is what makes a person grow and is a requirement to become great.     `,
+    InfoString: `Hello, Im henrik, A Developer from sweden with a great passion for learning, technology and self improvment that have found my passion in development. When i saw the opportunity to combine my drive to create with my hunger for learning i knew i had found my calling.`,
+    InfoString2: `The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time. That is why my focus lies in learning the basics, and in the changing field of frontend development you have to learn the skill of learning.`,
     Info: []
   },
   {
     Title: 'Education & Experience',
-    Displaypicture: true,
-    Git: 'https://github.com/Maltex88',
-    LinkedIn: '',
+    InfoString: ``, 
     Info: [
       {
         title: 'Ec Utbildningen - Göteborg - 2 years',
-        info:
-          'Focus to learn the foundation of web development with Javascript as the key component.',
-        stackArray: []
+        info: 'Focus to learn the foundation of web development with Javascript as the key component.',
+        stackArray: ['HTML and CSS', 'Javascript and Jquery', 'Communication and Projectmethods (Scrum, Agile workflow)', 'Graphic design (Photoshop, XD, Illustrater)', 'Backbone and Angular', 'Avancerad Javascript och React']
       }
     ]
   },
   {
     Title: 'Tech skills',
-    Displaypicture: true,
-    Git: 'https://github.com/Maltex88',
-    LinkedIn: '',
-    ContentString: `balbadaldlaldawldlawdla wdlwadlawl dwl dlaw ldawld lawldwlad lawdl lwalwla lwldlawdlawldal lwlw 
-    awdl waldlwa ldawl llawdl waldlwalldlaw ldlwald wal dlawl dllalwldal lll llwal llllllwaldwalll wllwaldlwal l
-    ldawldlawdl la lwlldlawldawl awl lllldaw ldlwldlldlwaldawldllldlaw lllld awlldwldl`,
+    InfoString: ``,
     Info: [
       {
-        title: '',
-        info: '',
         stackArray: [
           'Css/Sass/Html',
           'Javascript/TypeScript',
           'React, React Native, Angular',
           'PhotoShop, XD, Gimp',
           'Redux, GraphQL, Expo',
-          'Node, Express'
+          'Node, Express',
         ]
       }
     ]
-  }
+  },
 ];

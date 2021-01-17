@@ -8,7 +8,6 @@ const ButtonStyleOne = styled.button`
   background-color: black;
   color: white;
   border: 4px solid black;
-  margin-right: 10px;
   :hover {
     border: 4px solid white;
     background-color: rgba(0, 0, 0, 0);
@@ -18,7 +17,7 @@ const ButtonStyleTwo = styled.button`
   background-color: rgba(0, 0, 0, 0);
   color: #0df8de;
   border: 3px solid #0df8de;
-  margin-left: 10px;
+  
 
   :hover {
     color: #252628;
@@ -29,8 +28,6 @@ const ButtonStyleThree = styled.button`
   background-color: #0072b1;
   color: white;
   border: none;
-  margin-left: 10px;
-
   :hover {
     color: #252628;
     background-color: #0df8de;
@@ -41,10 +38,9 @@ const ButtonContainer = styled.div`
   justify-content: space-around;
 
   button {
-    width: 10rem;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 2px 2px;
     border-radius: 4px;
     span {
       margin-left: 5px;

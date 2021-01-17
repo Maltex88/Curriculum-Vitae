@@ -12,11 +12,9 @@ const Main = styled.div`
 `;
 
 const Content = styled.div`
-  display: flex;
-  justify-content: space-between;
   position: absolute;
-  top: 70px;
-  padding: 10px;
+  top: 4rem;
+  padding: 2rem;
   width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;

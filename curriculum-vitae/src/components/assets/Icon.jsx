@@ -7,7 +7,7 @@ import { IconContext } from 'react-icons';
 export const Icon = props => (
   <IconContext.Provider
     value={{
-      style: { verticalAlign: 'middle' },
+      style: { verticalAlign: 'middle', zIndex: 2 },
       color: `${props.color}`,
       size: `${props.iconSize}`
     }}
